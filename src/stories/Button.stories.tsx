@@ -12,3 +12,6 @@ const Template: Story = (args) => (
 );
 
 export const Default = Template.bind({});
+
+Default.args = { disabled: false };
+// handled separately as this is a native prop and not included in ButtonProps
