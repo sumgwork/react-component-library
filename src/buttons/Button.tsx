@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyledButton } from './Button.styles';
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
@@ -28,6 +29,13 @@ Button.defaultProps = {
   variant: 'secondary',
   size: 'medium',
   isFullWidth: false,
+};
+
+// propTypes are needed since this library could be consumed by JS applications (non-TS)
+Button.propTypes = {
+  variant: PropTypes.oneOf(['secondary', 'primary', 'danger']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  isFullWidth: PropTypes.bool,
 };
 
 Button.displayName = 'Button';
