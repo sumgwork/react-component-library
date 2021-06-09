@@ -12,14 +12,7 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 // ComponentPropsWithoutRef lets prop spreading, to support native props
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, ...props }, ref) => (
-    <StyledButton
-      ref={ref}
-      type="button"
-      //   variant={variant}
-      //   size={size}
-      //   isFullWidth={isFullWidth}
-      {...props}
-    >
+    <StyledButton ref={ref} type="button" {...props}>
       {children}
     </StyledButton>
   )
